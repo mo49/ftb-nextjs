@@ -33,6 +33,7 @@ export const TextboxWithInfo = forwardRef<HTMLInputElement, Props>(
           {...props}
           ref={ref}
           id={textboxId}
+          // コンポーネントの状態をARIA属性で把握
           aria-invalid={!!error}
           aria-errormessage={errorMessageId}
           aria-describedby={description ? descriptionId : undefined}

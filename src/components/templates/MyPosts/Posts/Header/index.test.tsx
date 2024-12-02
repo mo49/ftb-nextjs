@@ -5,10 +5,13 @@ import { Header } from "./";
 
 const user = userEvent.setup();
 
+// setup関数
+// https://kentcdodds.com/blog/avoid-nesting-when-youre-testing#apply-aha-avoid-hasty-abstractions
 function setup(url = "/my/posts?page=1") {
   mockRouter.setCurrentUrl(url);
   render(<Header />);
   const combobox = screen.getByRole("combobox", { name: "公開ステータス" });
+  // インタラクション関数
   async function selectOption(label: string) {
     await user.selectOptions(combobox, label);
   }
@@ -34,7 +37,7 @@ test("公開ステータスを変更すると、status が変わる", async () =
   // すでにある page=1 が消えていないこともあわせて検証
   const { selectOption } = setup();
   expect(mockRouter).toMatchObject({ query: { page: "1" } });
-  await selectOption("公開");
+  await selectOption("公開"); // ?status=public になる
   expect(mockRouter).toMatchObject({
     query: { page: "1", status: "public" },
   });

@@ -4,6 +4,8 @@ import { PostFormInfo } from "@/components/molecules/PostFormInfo";
 import { TextareaWithInfo } from "@/components/molecules/TextareaWithInfo";
 import { createMyPostInputSchema } from "@/lib/schema/MyPosts";
 import { PostInput } from "@/pages/api/my/posts";
+// 公式サンプルはYup
+// https://www.react-hook-form.com/get-started/#SchemaValidation
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
   FieldValues,
@@ -44,14 +46,14 @@ export const PostForm = (props: Props) => {
             register={register}
             setValue={setValue}
             name="imageUrl"
-            error={errors.imageUrl?.message}
+            error={errors.imageUrl?.message} // エラーがあれば自動的に表示
           />
         </div>
         <TextareaWithInfo
           {...register("body")}
           title="本文"
           rows={20}
-          error={errors.body?.message}
+          error={errors.body?.message} // エラーがあれば自動的に表示
         />
       </div>
       <PostFormFooter

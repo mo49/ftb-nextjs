@@ -45,6 +45,7 @@ setupMockServer(handleGetMyProfile());
 test("不適正内容で「下書き保存」を試みると、バリデーションエラーが表示される", async () => {
   const { saveAsDraft } = setup();
   await saveAsDraft();
+  // Assertをリトライ
   await waitFor(() =>
     expect(
       screen.getByRole("textbox", { name: "記事タイトル" })

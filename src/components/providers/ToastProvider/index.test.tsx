@@ -21,9 +21,11 @@ test("showToast を呼び出すと Toast コンポーネントが表示される
     </ToastProvider>
   );
   // 初めは表示されていない
+  // queryByRole: 要素の不在を確認したい場合に使用
   expect(screen.queryByRole("alert")).not.toBeInTheDocument();
   await user.click(screen.getByRole("button"));
   // 表示されていることを確認
+  // getByRole: 要素の存在を確認したい場合に使用
   expect(screen.getByRole("alert")).toHaveTextContent(message);
 });
 
