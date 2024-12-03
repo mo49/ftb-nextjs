@@ -3,6 +3,7 @@ import userEvent from "@testing-library/user-event";
 import type { RequestHandler } from "msw";
 import { setupServer } from "msw/node";
 
+// ここ貰う //
 export function setupMockServer(...handlers: RequestHandler[]) {
   const server = setupServer(...handlers);
   beforeAll(() => server.listen());
@@ -10,6 +11,7 @@ export function setupMockServer(...handlers: RequestHandler[]) {
   afterAll(() => server.close());
   return server;
 }
+////////////////
 
 export function selectImageFile(
   inputTestId = "file",
