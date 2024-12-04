@@ -33,6 +33,7 @@ export const SucceedSaveAsDraft: Story = {
   },
 };
 
+// PostFormコンポーネントで定義されたonInvalidハンドラを呼ぶ
 export const FailedSaveAsDraft: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);

@@ -47,6 +47,7 @@ export function useUploadImage<T extends FieldValues>({
     register(name);
   }, [register, name]);
 
+  // 画像選択時
   const onChangeImage = handleChangeFile((_, file) => {
     uploadImage({ file })
       .then((data) => {

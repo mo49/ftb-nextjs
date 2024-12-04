@@ -38,7 +38,7 @@ export const PostForm = (props: Props) => {
     <form
       aria-label={props.title}
       className={styles.module}
-      onSubmit={handleSubmit(props.onValid, props.onInvalid)}
+      onSubmit={handleSubmit(props.onValid, props.onInvalid)} // 有効時にはonValid関数、無効時にはonInvalid関数をコールバックする
     >
       <div className={styles.content}>
         <div className={styles.meta}>

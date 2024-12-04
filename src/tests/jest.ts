@@ -21,7 +21,9 @@ export function selectImageFile(
   const user = userEvent.setup();
   const filePath = [`C:\\fakepath\\${fileName}`];
   const file = new File([content], fileName, { type: "image/png" });
+  // data-testid="file" の input 要素を取得
   const fileInput = screen.getByTestId(inputTestId);
+  // 画像選択の再現
   const selectImage = () => user.upload(fileInput, file);
   return { fileInput, filePath, selectImage };
 }

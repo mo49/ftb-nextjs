@@ -26,7 +26,7 @@ test("「写真を変更する」ボタンがある", async () => {
 test("画像のアップロードに成功した場合、画像の src 属性が変化する", async () => {
   mockUploadImage();
   render(<TestComponent />);
-  expect(screen.getByRole("img").getAttribute("src")).toBeFalsy();
+  expect(screen.getByRole("img").getAttribute("src")).toBeFalsy(); // 空
   const { selectImage } = selectImageFile();
   await selectImage();
   await waitFor(() =>
@@ -40,6 +40,7 @@ test("画像のアップロードに失敗した場合、アラートが表示�
   const { selectImage } = selectImageFile();
   await selectImage();
   await waitFor(() =>
+    // toast
     expect(screen.getByRole("alert")).toHaveTextContent(
       "画像のアップロードに失敗しました"
     )
