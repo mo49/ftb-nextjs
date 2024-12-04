@@ -5,6 +5,7 @@ import {
 import { ComponentMeta, ComponentStoryObj } from "@storybook/react";
 import { Toast } from ".";
 
+// Decoratorを作る関数
 function createDecorator(defaultState?: Partial<ToastState>) {
   return function Decorator() {
     return (

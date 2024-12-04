@@ -4,6 +4,7 @@ import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
 import { Args, PartialStoryFn } from "@storybook/csf";
 import { ReactFramework } from "@storybook/react";
 
+// DecoratorはStoryのラッパーとして機能する
 export const BasicLayoutDecorator = (
   Story: PartialStoryFn<ReactFramework, Args>
 ) => BasicLayout(<Story />);
@@ -11,6 +12,7 @@ export const BasicLayoutDecorator = (
 export const LoginUserInfoProviderDecorator = (
   Story: PartialStoryFn<ReactFramework, Args>
 ) => (
+  // storyがcontext経由でLoginUserInfoを参照
   <LoginUserInfoProvider>
     <Story />
   </LoginUserInfoProvider>
@@ -22,6 +24,7 @@ export const SPStory = {
       viewports: INITIAL_VIEWPORTS,
       defaultViewport: "iphone6",
     },
+    // VRT用
     screenshot: {
       viewport: {
         width: 375,
