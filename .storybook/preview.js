@@ -18,6 +18,8 @@ export const parameters = {
   viewport: {
     viewports: INITIAL_VIEWPORTS,
   },
+   // 全てのstoryでユーザー情報が必要ならここで指定
+   // 個別storyで上書きも可能
   msw: { handlers: [handleGetMyProfile()] },
   layout: "fullscreen",
 };

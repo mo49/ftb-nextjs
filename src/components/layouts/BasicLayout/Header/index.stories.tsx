@@ -14,6 +14,7 @@ type Story = ComponentStoryObj<typeof Header>;
 
 export const NotLoggedIn: Story = {
   parameters: {
+    // .storybook/preview.js で設定したデフォルトのパラメータを上書き
     msw: { handlers: [handleGetMyProfile({ status: 401 })] },
   },
 };
