@@ -46,6 +46,7 @@ export const FailedSaveAsDraft: Story = {
 export const SavePublish: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
+    // awaitで止めて順番に処理を行う
     await user.type(
       canvas.getByRole("textbox", { name: "記事タイトル" }),
       "私の技術記事"
