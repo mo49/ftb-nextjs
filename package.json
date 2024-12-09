@@ -27,7 +27,6 @@
     "vrt:run": "reg-suit run",
     "vrt:serve": "npx http-server .reg -o -p 8080",
     "prisma:migrate": "prisma migrate dev",
-    "prisma:seed": "prisma db seed",
     "prisma:reset": "prisma migrate reset --force",
     "prisma:studio": "npx prisma studio",
     "docker:prod:build": "docker compose -f docker-compose.prod.yaml build",

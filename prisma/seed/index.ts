@@ -7,6 +7,7 @@ export const prisma = new PrismaClient();
 
 const main = async () => {
   console.log(`Start seeding ...`);
+  // まとめて投入
   await prisma.$transaction([...users(), ...posts(), ...likes()]);
   console.log(`Seeding finished.`);
 };
