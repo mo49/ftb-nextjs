@@ -16,6 +16,7 @@ Page.getLayout = BasicLayout;
 Page.getPageTitle = PageTitle(() => "Tech Posts");
 
 export const getServerSideProps = withoutLogin<Props>(async ({ query }) => {
+  // ページコンポーネントでAPIを叩いている
   return await getPosts({
     page: parseAsPositiveInt(query.page),
     orderBy: parseAsNonEmptyString(query.orderBy),

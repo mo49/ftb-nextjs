@@ -2,6 +2,7 @@ import { rest } from "msw";
 import { path } from "..";
 import { getMyProfileData } from "./fixture";
 
+// storyでも使いまわされている
 export function handleGetMyProfile(args?: {
   mock?: jest.Mock<any, any>;
   status?: number;

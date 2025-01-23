@@ -15,6 +15,8 @@ type Story = ComponentStoryObj<typeof Header>;
 export const NotLoggedIn: Story = {
   parameters: {
     // .storybook/preview.js で設定したデフォルトのパラメータを上書き
+    // LoginUserInfoProviderでハンバーガーメニューの表示非表示を切り替えるため
+    // status: 401 にすることに効果がある？
     msw: { handlers: [handleGetMyProfile({ status: 401 })] },
   },
 };

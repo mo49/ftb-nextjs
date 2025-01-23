@@ -7,6 +7,7 @@ export default {
   component: Login,
   parameters: {
     nextRouter: { pathname: "/login" },
+    // NOTE: これ表示上なにも変わらないので意味なくないか？
     msw: { handlers: [handleGetMyProfile({ status: 401 })] },
   },
   decorators: [BasicLayoutDecorator],

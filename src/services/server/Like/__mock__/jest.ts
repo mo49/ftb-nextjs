@@ -4,6 +4,7 @@ import { postLikeData } from "./fixture";
 
 jest.mock("../");
 
+// どこにも使われていない
 export function mockPostLikeResolved() {
   return jest.spyOn(Like, "postLike").mockResolvedValue(postLikeData);
 }
